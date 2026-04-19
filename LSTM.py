@@ -17,7 +17,7 @@ csv_path = os.path.join(path, csv_filename)
 
 df = pd.read_csv(csv_path)
 
-df.index = pd.to_datetime(df['Date Time'], format="%d.%m.%Y %H:%M:%S")
+df.index = pd.to_datetime(df['Date Time'], format='%d.%m.%Y %H:%M:%S')
 temp = df['T (degC)']
 
 def df_to_X_y(df, window_size = 5):
