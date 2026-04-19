@@ -11,13 +11,13 @@ import kagglehub
 import matplotlib.pyplot as plt
 
 
-path = kagglehub.dataset_download("mnassrib/jena-climate")
-csv_filename = "jena_climate_2009_2016.csv"
+path = kagglehub.dataset_download('mnassrib/jena-climate')
+csv_filename = 'jena_climate_2009_2016.csv'
 csv_path = os.path.join(path, csv_filename)
 
 df = pd.read_csv(csv_path)
 
-df.index = pd.to_datetime(df["Date Time"], format="%d.%m.%Y %H:%M:%S")
+df.index = pd.to_datetime(df['Date Time'], format="%d.%m.%Y %H:%M:%S")
 temp = df['T (degC)']
 
 def df_to_X_y(df, window_size = 5):
@@ -42,7 +42,7 @@ model_lstm1.summary()
 
 cp = ModelCheckpoint('model_lstm1.keras', save_best_only=True)
 
-model_lstm1.compile(loss = "mse",
+model_lstm1.compile(loss = 'mse',
                     optimizer = Adam(learning_rate= 0.0001),
                     metrics = [RootMeanSquaredError()]
                     )
