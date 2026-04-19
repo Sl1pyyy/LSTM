@@ -31,7 +31,7 @@ X, y = df_to_X_y(temp, window_size=5)
 
 X_train, y_train = X[:336000], y[:336000]
 X_val, y_val = X[336000:370000], y[336000:370000]
-X_test, y_test = X[336000:], y[:336000:]
+X_test, y_test = X[336000:], y[336000:]
 
 model_lstm1 = Sequential()
 model_lstm1.add(InputLayer((5,1)))
