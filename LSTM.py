@@ -57,7 +57,7 @@ train_results = pd.DataFrame(data = {'Train predictions': train_predictions, 'Ac
 val_predictions = model_lstm1.predict(X_val).flatten()
 val_results = pd.DataFrame(data = {'Train predictions': val_predictions, 'Actual predictions': y_val})
 
-test_predictions = model_lstm1.predict(X_train).flatten()
+test_predictions = model_lstm1.predict(X_test).flatten()
 test_results = pd.DataFrame(data = {'Train predictions': test_predictions, 'Actual predictions': y_test})
 
 plt.figure(figsize = (12,8))
